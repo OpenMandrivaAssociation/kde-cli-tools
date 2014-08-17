@@ -1,7 +1,7 @@
 %define debug_package %{nil}
 
 Name: kde-cli-tools
-Version: 5.0.0
+Version: 5.0.1
 Release: 1
 Source0: http://ftp5.gwdg.de/pub/linux/kde/stable/plasma/%{version}/%{name}-%{version}.tar.xz
 Source1000: %{name}.rpmlintrc
