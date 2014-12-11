@@ -41,13 +41,14 @@ KDE Plasma 5 CLI (Command Line Interface) Tools
 
 %prep
 %setup -qn %{name}-%{major}
-%cmake -G Ninja
+%cmake -G Ninja \
+	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
 
 %build
 ninja -C build
 
 %install
-DESTDIR="%{buildroot}" ninja -C build install %{?_smp_mflags}
+DESTDIR="%{buildroot}" ninja -C build install
 %find_lang filetypes
 %find_lang kcmshell
 %find_lang kdesu
@@ -70,7 +71,7 @@ DESTDIR="%{buildroot}" ninja -C build install %{?_smp_mflags}
 %{_libdir}/libexec/kdeeject
 %{_libdir}/libexec/kdesu
 %{_libdir}/libkdeinit5_kcmshell5.so
-%{_libdir}/plugins/kcm_filetypes.so
+%{_libdir}/qt5/plugins/kcm_filetypes.so
 %{_datadir}/kservices5/*
 %{_mandir}/man1/kdesu.1*
 %doc %{_docdir}/HTML/en/kdesu
