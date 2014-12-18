@@ -3,8 +3,8 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: kde-cli-tools
-Version: 5.1.1
-Release: 2
+Version: 5.1.2
+Release: 1
 Source0: http://ftp5.gwdg.de/pub/linux/kde/%{stable}/plasma/%{major}/%{name}-%{version}.tar.xz
 Source1000: %{name}.rpmlintrc
 Summary: KDE Plasma 5 CLI (Command Line Interface) Tools
@@ -33,7 +33,11 @@ BuildRequires: cmake(KF5I18n)
 BuildRequires: cmake(KF5KCMUtils)
 BuildRequires: cmake(KF5Su)
 BuildRequires: cmake(KF5KDE4Support)
+BuildRequires: cmake(KF5KDELibs4Support)
 BuildRequires: cmake(KF5WindowSystem)
+BuildRequires: cmake(KF5DocTools)
+BuildRequires: cmake(KF5ItemModels)
+BuildRequires: cmake(KF5Init)
 BuildRequires: ninja
 
 %description
