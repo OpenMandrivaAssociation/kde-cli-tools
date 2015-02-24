@@ -3,7 +3,7 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: kde-cli-tools
-Version: 5.2.0
+Version: 5.2.1
 Release: 1
 Source0: http://ftp5.gwdg.de/pub/linux/kde/%{stable}/plasma/%{major}/%{name}-%{version}.tar.xz
 Source1000: %{name}.rpmlintrc
@@ -72,8 +72,8 @@ DESTDIR="%{buildroot}" ninja -C build install
 %{_bindir}/kstart5
 %{_bindir}/ksvgtopng5
 %{_bindir}/ktraderclient5
-%{_libdir}/libexec/kdeeject
-%{_libdir}/libexec/kdesu
+%{_libdir}/libexec/kf5/kdeeject
+%{_libdir}/libexec/kf5/kdesu
 %{_libdir}/libkdeinit5_kcmshell5.so
 %{_libdir}/qt5/plugins/kcm_filetypes.so
 %{_datadir}/kservices5/*
