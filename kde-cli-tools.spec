@@ -3,7 +3,7 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: kde-cli-tools
-Version: 5.2.1
+Version: 5.2.2
 Release: 1
 Source0: http://ftp5.gwdg.de/pub/linux/kde/%{stable}/plasma/%{major}/%{name}-%{version}.tar.xz
 Source1000: %{name}.rpmlintrc
@@ -15,18 +15,18 @@ BuildRequires: cmake
 BuildRequires: qmake5
 BuildRequires: extra-cmake-modules5
 BuildRequires: pkgconfig(Qt5Core)
-BuildRequires: pkgconfig(Qt5Test)
-BuildRequires: pkgconfig(Qt5X11Extras)
-BuildRequires: pkgconfig(Qt5Gui)
-BuildRequires: pkgconfig(Qt5Widgets)
-BuildRequires: pkgconfig(Qt5Svg)
 BuildRequires: pkgconfig(Qt5DBus)
+BuildRequires: pkgconfig(Qt5Gui)
+BuildRequires: pkgconfig(Qt5Svg)
+BuildRequires: pkgconfig(Qt5Test)
+BuildRequires: pkgconfig(Qt5Widgets)
+BuildRequires: pkgconfig(Qt5X11Extras)
+BuildRequires: pkgconfig(x11)
+BuildRequires: pkgconfig(xcb)
+BuildRequires: pkgconfig(xext)
 BuildRequires: cmake(KF5DocTools)
 BuildRequires: cmake(Gettext)
 BuildRequires: cmake(ECM)
-BuildRequires: cmake(Qt5)
-BuildRequires: cmake(Qt5X11Extras)
-BuildRequires: cmake(Qt5Test)
 BuildRequires: cmake(KF5Config)
 BuildRequires: cmake(KF5IconThemes)
 BuildRequires: cmake(KF5I18n)
@@ -39,9 +39,10 @@ BuildRequires: cmake(KF5DocTools)
 BuildRequires: cmake(KF5ItemModels)
 BuildRequires: cmake(KF5Init)
 BuildRequires: ninja
+Requires: kinit
 
 %description
-KDE Plasma 5 CLI (Command Line Interface) Tools
+KDE Plasma 5 CLI (Command Line Interface) Tools.
 
 %prep
 %setup -qn %{name}-%{major}
