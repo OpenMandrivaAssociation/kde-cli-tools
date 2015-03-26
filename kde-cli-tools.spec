@@ -79,4 +79,4 @@ DESTDIR="%{buildroot}" ninja -C build install
 %{_libdir}/qt5/plugins/kcm_filetypes.so
 %{_datadir}/kservices5/*
 %{_mandir}/man1/kdesu.1*
-%doc %{_docdir}/HTML/en/kdesu
+%doc %{_docdir}/HTML/*/kdesu
