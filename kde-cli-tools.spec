@@ -3,17 +3,14 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: kde-cli-tools
-Version: 5.2.2
+Version: 5.2.95
 Release: 1
-Source0: http://ftp5.gwdg.de/pub/linux/kde/%{stable}/plasma/%{major}/%{name}-%{version}.tar.xz
+Source0: http://download.kde.org/unstable/plasma/%{stable}/plasma/%{major}/%{name}-%{version}.tar.xz
 Source1000: %{name}.rpmlintrc
 Summary: KDE Plasma 5 CLI (Command Line Interface) Tools
 URL: http://kde.org/
 License: GPL
 Group: System/Libraries
-BuildRequires: cmake
-BuildRequires: qmake5
-BuildRequires: extra-cmake-modules5
 BuildRequires: pkgconfig(Qt5Core)
 BuildRequires: pkgconfig(Qt5DBus)
 BuildRequires: pkgconfig(Qt5Gui)
@@ -38,7 +35,6 @@ BuildRequires: cmake(KF5WindowSystem)
 BuildRequires: cmake(KF5DocTools)
 BuildRequires: cmake(KF5ItemModels)
 BuildRequires: cmake(KF5Init)
-BuildRequires: ninja
 Requires: kinit
 
 %description
@@ -46,14 +42,14 @@ KDE Plasma 5 CLI (Command Line Interface) Tools.
 
 %prep
 %setup -qn %{name}-%{major}
-%cmake -G Ninja \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
+%cmake_kde5
 
 %build
-ninja -C build
+%ninja -C build
 
 %install
-DESTDIR="%{buildroot}" ninja -C build install
+%ninja_install -C build
+
 %find_lang filetypes
 %find_lang kcmshell
 %find_lang kdesu
