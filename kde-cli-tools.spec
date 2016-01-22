@@ -4,7 +4,7 @@
 
 Name: kde-cli-tools
 Version: 5.5.3
-Release: 1
+Release: 2
 Source0: http://download.kde.org/%{stable}/plasma/%{major}/%{name}-%{version}.tar.xz
 Source1000: %{name}.rpmlintrc
 Summary: KDE Plasma 5 CLI (Command Line Interface) Tools
@@ -50,6 +50,9 @@ KDE Plasma 5 CLI (Command Line Interface) Tools.
 %install
 %ninja_install -C build
 
+# (tpg) use kdesu form KF5
+ln -sf %{_libdir}/libexec/kf5/kdesu %{buildroot}%{_bindir}/kdesu
+
 %find_lang filetypes
 %find_lang kcmshell
 %find_lang kdesu
@@ -59,6 +62,7 @@ KDE Plasma 5 CLI (Command Line Interface) Tools.
 %find_lang ktraderclient
 
 %files -f filetypes.lang,kcmshell.lang,kdesu.lang,kioclient.lang,kmimetypefinder.lang,kstart.lang,ktraderclient.lang
+%{_bindir}/kdesu
 %{_bindir}/kcmshell5
 %{_bindir}/kde-open5
 %{_bindir}/kdecp5
