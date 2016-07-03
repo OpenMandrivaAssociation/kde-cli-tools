@@ -3,7 +3,7 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: kde-cli-tools
-Version: 5.6.5
+Version: 5.7.0
 Release: 1
 Source0: http://download.kde.org/%{stable}/plasma/%{major}/%{name}-%{version}.tar.xz
 Source1000: %{name}.rpmlintrc
@@ -53,13 +53,13 @@ KDE Plasma 5 CLI (Command Line Interface) Tools.
 # (tpg) use kdesu form KF5
 ln -sf %{_libdir}/libexec/kf5/kdesu %{buildroot}%{_bindir}/kdesu
 
-%find_lang filetypes
-%find_lang kcmshell
-%find_lang kdesu
-%find_lang kioclient
-%find_lang kmimetypefinder
-%find_lang kstart
-%find_lang ktraderclient
+%find_lang filetypes || touch filetypes.lang
+%find_lang kcmshell || touch kcmshell.lang
+%find_lang kdesu || touch kdesu.lang
+%find_lang kioclient || touch kioclient.lang
+%find_lang kmimetypefinder || touch kmimetypefinder.lang
+%find_lang kstart || touch kstart.lang
+%find_lang ktraderclient || touch ktraderclient.lang
 
 %files -f filetypes.lang,kcmshell.lang,kdesu.lang,kioclient.lang,kmimetypefinder.lang,kstart.lang,ktraderclient.lang
 %{_bindir}/kdesu
