@@ -61,7 +61,7 @@ ln -sf %{_libdir}/libexec/kf5/kdesu %{buildroot}%{_bindir}/kdesu
 %find_lang ktraderclient || touch ktraderclient.lang
 %find_lang kbroadcastnotification || touch kbroadcastnotification.lang
 
-%files -f filetypes.lang,kcmshell.lang,kdesu.lang,kioclient.lang,kmimetypefinder.lang,kstart.lang,ktraderclient.lang,kbroadcastnotlangification.
+%files -f filetypes.lang,kcmshell.lang,kdesu.lang,kioclient.lang,kmimetypefinder.lang,kstart.lang,ktraderclient.lang,kbroadcastnotification.lang
 %{_bindir}/kbroadcastnotification
 %{_bindir}/kdesu
 %{_bindir}/kcmshell5
