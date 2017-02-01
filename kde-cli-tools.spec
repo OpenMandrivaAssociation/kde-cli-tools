@@ -30,7 +30,6 @@ BuildRequires: cmake(KF5I18n)
 BuildRequires: cmake(KF5KCMUtils)
 BuildRequires: cmake(KF5Su)
 BuildRequires: cmake(KF5KDE4Support)
-BuildRequires: cmake(KF5KDELibs4Support)
 BuildRequires: cmake(KF5WindowSystem)
 BuildRequires: cmake(KF5DocTools)
 BuildRequires: cmake(KF5ItemModels)
@@ -60,8 +59,10 @@ ln -sf %{_libdir}/libexec/kf5/kdesu %{buildroot}%{_bindir}/kdesu
 %find_lang kmimetypefinder || touch kmimetypefinder.lang
 %find_lang kstart || touch kstart.lang
 %find_lang ktraderclient || touch ktraderclient.lang
+%find_lang kbroadcastnotification || touch kbroadcastnotification.lang
 
-%files -f filetypes.lang,kcmshell.lang,kdesu.lang,kioclient.lang,kmimetypefinder.lang,kstart.lang,ktraderclient.lang
+%files -f filetypes.lang,kcmshell.lang,kdesu.lang,kioclient.lang,kmimetypefinder.lang,kstart.lang,ktraderclient.lang,kbroadcastnotlangification.
+%{_bindir}/kbroadcastnotification
 %{_bindir}/kdesu
 %{_bindir}/kcmshell5
 %{_bindir}/kde-open5
@@ -80,3 +81,4 @@ ln -sf %{_libdir}/libexec/kf5/kdesu %{buildroot}%{_bindir}/kdesu
 %{_datadir}/kservices5/*
 %{_mandir}/man1/kdesu.1*
 %doc %{_docdir}/HTML/*/kdesu
+%doc %{_docdir}/HTML/*/kcontrol5/filetypes
