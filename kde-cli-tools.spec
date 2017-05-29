@@ -3,7 +3,7 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: kde-cli-tools
-Version: 5.9.5
+Version: 5.10.0
 Release: 1
 Source0: http://download.kde.org/%{stable}/plasma/%{major}/%{name}-%{version}.tar.xz
 Source1000: %{name}.rpmlintrc
@@ -52,16 +52,9 @@ KDE Plasma 5 CLI (Command Line Interface) Tools.
 # (tpg) use kdesu form KF5
 ln -sf %{_libdir}/libexec/kf5/kdesu %{buildroot}%{_bindir}/kdesu
 
-%find_lang filetypes || touch filetypes.lang
-%find_lang kcmshell || touch kcmshell.lang
-%find_lang kdesu || touch kdesu.lang
-%find_lang kioclient || touch kioclient.lang
-%find_lang kmimetypefinder || touch kmimetypefinder.lang
-%find_lang kstart || touch kstart.lang
-%find_lang ktraderclient || touch ktraderclient.lang
-%find_lang kbroadcastnotification || touch kbroadcastnotification.lang
+%find_lang %{name} --all-name --with-html
 
-%files -f filetypes.lang,kcmshell.lang,kdesu.lang,kioclient.lang,kmimetypefinder.lang,kstart.lang,ktraderclient.lang,kbroadcastnotification.lang
+%files -f %{name}.lang
 %{_bindir}/kbroadcastnotification
 %{_bindir}/kdesu
 %{_bindir}/kcmshell5
@@ -80,5 +73,3 @@ ln -sf %{_libdir}/libexec/kf5/kdesu %{buildroot}%{_bindir}/kdesu
 %{_libdir}/qt5/plugins/kcm_filetypes.so
 %{_datadir}/kservices5/*
 %{_mandir}/man1/kdesu.1*
-%doc %{_docdir}/HTML/*/kdesu
-%doc %{_docdir}/HTML/*/kcontrol5/filetypes
