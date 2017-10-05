@@ -3,7 +3,7 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: kde-cli-tools
-Version: 5.10.5
+Version: 5.11.0
 Release: 1
 Source0: http://download.kde.org/%{stable}/plasma/%{major}/%{name}-%{version}.tar.xz
 Source1000: %{name}.rpmlintrc
@@ -52,7 +52,7 @@ KDE Plasma 5 CLI (Command Line Interface) Tools.
 # (tpg) use kdesu form KF5
 ln -sf %{_libdir}/libexec/kf5/kdesu %{buildroot}%{_bindir}/kdesu
 
-%find_lang %{name} --all-name --with-html
+%find_lang %{name} --all-name --with-html --with-man
 
 %files -f %{name}.lang
 %{_bindir}/kbroadcastnotification
