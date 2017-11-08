@@ -34,6 +34,7 @@ BuildRequires: cmake(KF5WindowSystem)
 BuildRequires: cmake(KF5DocTools)
 BuildRequires: cmake(KF5ItemModels)
 BuildRequires: cmake(KF5Init)
+BuildRequires: cmake(KF5Activities)
 Requires: kinit
 
 %description
