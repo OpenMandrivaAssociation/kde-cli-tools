@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   kde-cli-tools-5.12.3.tar.xz: 951506361ab59e6f19ecc57cf085515d16fbbc51
+sources:
+  kde-cli-tools-5.12.6.tar.xz: ef078b11d0793372113c79347d7dd11af8920b18
