@@ -35,6 +35,7 @@ BuildRequires: cmake(KF5DocTools)
 BuildRequires: cmake(KF5ItemModels)
 BuildRequires: cmake(KF5Init)
 BuildRequires: cmake(KF5Activities)
+BuildRequires: cmake(KF5Declarative)
 BuildRequires: cmake(LibKWorkspace)
 Requires: kinit
 
