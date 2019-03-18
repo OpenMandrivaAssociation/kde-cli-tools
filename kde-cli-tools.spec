@@ -4,7 +4,7 @@
 
 Name: kde-cli-tools
 Version: 5.15.3
-Release: 1
+Release: 2
 Source0: http://download.kde.org/%{stable}/plasma/%{major}/%{name}-%{version}.tar.xz
 Source1000: %{name}.rpmlintrc
 Summary: KDE Plasma 5 CLI (Command Line Interface) Tools
