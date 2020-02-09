@@ -3,8 +3,8 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: kde-cli-tools
-Version: 5.17.5
-Release: 2
+Version: 5.18.0
+Release: 1
 Source0: http://download.kde.org/%{stable}/plasma/%{major}/%{name}-%{version}.tar.xz
 Source1000: %{name}.rpmlintrc
 Summary: KDE Plasma 5 CLI (Command Line Interface) Tools
@@ -75,4 +75,5 @@ ln -sf %{_libdir}/libexec/kf5/kdesu %{buildroot}%{_bindir}/kdesu
 %{_libdir}/libkdeinit5_kcmshell5.so
 %{_libdir}/qt5/plugins/kcm_filetypes.so
 %{_datadir}/kservices5/*
+%{_datadir}/applications/org.kde.keditfiletype.desktop
 %{_mandir}/man1/kdesu.1*
