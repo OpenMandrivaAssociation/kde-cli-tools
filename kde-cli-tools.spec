@@ -3,7 +3,7 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: kde-cli-tools
-Version: 5.18.5
+Version: 5.18.90
 Release: 1
 Source0: http://download.kde.org/%{stable}/plasma/%{major}/%{name}-%{version}.tar.xz
 Source1000: %{name}.rpmlintrc
@@ -72,7 +72,6 @@ ln -sf %{_libdir}/libexec/kf5/kdesu %{buildroot}%{_bindir}/kdesu
 %{_bindir}/ktraderclient5
 %{_libdir}/libexec/kf5/kdeeject
 %{_libdir}/libexec/kf5/kdesu
-%{_libdir}/libkdeinit5_kcmshell5.so
 %{_libdir}/qt5/plugins/kcm_filetypes.so
 %{_datadir}/kservices5/*
 %{_datadir}/applications/org.kde.keditfiletype.desktop
