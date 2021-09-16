@@ -2,7 +2,7 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: kde-cli-tools
-Version: 5.22.5
+Version: 5.22.90
 Release: 1
 Source0: http://download.kde.org/%{stable}/plasma/%{major}/%{name}-%{version}.tar.xz
 Source1000: %{name}.rpmlintrc
@@ -70,9 +70,11 @@ ln -sf %{_libdir}/libexec/kf5/kdesu %{buildroot}%{_bindir}/kdesu
 %{_bindir}/kstart5
 %{_bindir}/ksvgtopng5
 %{_bindir}/ktraderclient5
+%{_bindir}/plasma-open-settings
 %{_libdir}/libexec/kf5/kdeeject
 %{_libdir}/libexec/kf5/kdesu
 %{_libdir}/qt5/plugins/kcm_filetypes.so
 %{_datadir}/kservices5/*
 %{_datadir}/applications/org.kde.keditfiletype.desktop
+%{_datadir}/applications/org.kde.plasma.settings.open.desktop
 %{_mandir}/man1/kdesu.1*
