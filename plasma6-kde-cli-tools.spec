@@ -38,6 +38,7 @@ BuildRequires: cmake(KF6DocTools)
 BuildRequires: cmake(KF6ItemModels)
 BuildRequires: cmake(KF6Activities)
 BuildRequires: cmake(KF6Declarative)
+BuildRequires: cmake(KF6Parts)
 
 %description
 KDE Plasma 6 CLI (Command Line Interface) Tools.
