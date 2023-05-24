@@ -3,7 +3,7 @@
 
 %define git 20230523
 
-Name: kde-cli-tools
+Name: plasma6-kde-cli-tools
 Version: 5.240.0
 Release: %{?git:0.%{git}.}1
 %if 0%{?git:1}
