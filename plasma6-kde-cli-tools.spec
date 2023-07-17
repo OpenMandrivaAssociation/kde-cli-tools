@@ -39,6 +39,8 @@ BuildRequires: cmake(KF6ItemModels)
 BuildRequires: cmake(KF6Activities)
 BuildRequires: cmake(KF6Declarative)
 BuildRequires: cmake(KF6Parts)
+# Prevent the Plasma5 version from being pulled in
+BuildRequires: plasma6-xdg-desktop-portal-kde
 
 %description
 KDE Plasma 6 CLI (Command Line Interface) Tools.
