@@ -1,7 +1,7 @@
 %define major %(echo %{version} |cut -d. -f1-3)
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
-%define git 20231023
+%define git 20231104
 
 Name: plasma6-kde-cli-tools
 Version: 5.240.0
@@ -64,7 +64,6 @@ KDE Plasma 6 CLI (Command Line Interface) Tools.
 
 %files -f %{name}.lang
 %{_bindir}/kbroadcastnotification
-%{_bindir}/kdesu
 %{_bindir}/kde-inhibit
 %{_bindir}/kde-open5
 %{_bindir}/kdecp5
@@ -85,6 +84,7 @@ KDE Plasma 6 CLI (Command Line Interface) Tools.
 %{_bindir}/kstart
 %{_bindir}/ksvgtopng
 %{_libdir}/libexec/kf6/kdeeject
+%{_libdir}/libexec/kf6/kdesu
 %{_qtdir}/plugins/plasma/kcms/systemsettings_qwidgets/kcm_filetypes.so
 %{_datadir}/applications/kcm_filetypes.desktop
 %{_datadir}/applications/org.kde.keditfiletype.desktop
