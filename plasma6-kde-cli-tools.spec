@@ -5,7 +5,7 @@
 
 Name: plasma6-kde-cli-tools
 Version: 5.27.80
-Release: %{?git:0.%{git}.}1
+Release: %{?git:0.%{git}.}2
 %if 0%{?git:1}
 Source0: https://invent.kde.org/plasma/kde-cli-tools/-/archive/master/kde-cli-tools-master.tar.bz2#/kde-cli-tools-%{git}.tar.bz2
 %else
