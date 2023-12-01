@@ -40,8 +40,6 @@ BuildRequires: cmake(PlasmaActivities)
 BuildRequires: cmake(KF6Declarative)
 BuildRequires: cmake(KF6Parts)
 BuildRequires: %mklibname -d KF6IconWidgets
-# Prevent the Plasma5 version from being pulled in
-BuildRequires: plasma6-xdg-desktop-portal-kde
 
 %description
 KDE Plasma 6 CLI (Command Line Interface) Tools.
