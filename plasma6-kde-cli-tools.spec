@@ -4,7 +4,7 @@
 #define git 20231104
 
 Name: plasma6-kde-cli-tools
-Version: 5.90.0
+Version: 5.91.0
 Release: %{?git:0.%{git}.}1
 %if 0%{?git:1}
 Source0: https://invent.kde.org/plasma/kde-cli-tools/-/archive/master/kde-cli-tools-master.tar.bz2#/kde-cli-tools-%{git}.tar.bz2
@@ -40,6 +40,7 @@ BuildRequires: cmake(PlasmaActivities)
 BuildRequires: cmake(KF6Declarative)
 BuildRequires: cmake(KF6Parts)
 BuildRequires: %mklibname -d KF6IconWidgets
+BuildRequires: gettext
 
 %description
 KDE Plasma 6 CLI (Command Line Interface) Tools.
@@ -88,3 +89,4 @@ KDE Plasma 6 CLI (Command Line Interface) Tools.
 %{_datadir}/applications/org.kde.keditfiletype.desktop
 %{_datadir}/applications/org.kde.plasma.settings.open.desktop
 %{_mandir}/man1/kdesu.1*
+%{_datadir}/zsh/site-functions/_kde-inhibit
