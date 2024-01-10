@@ -4,7 +4,7 @@
 #define git 20231104
 
 Name: plasma6-kde-cli-tools
-Version: 5.91.0
+Version: 5.92.0
 Release: %{?git:0.%{git}.}1
 %if 0%{?git:1}
 Source0: https://invent.kde.org/plasma/kde-cli-tools/-/archive/master/kde-cli-tools-master.tar.bz2#/kde-cli-tools-%{git}.tar.bz2
