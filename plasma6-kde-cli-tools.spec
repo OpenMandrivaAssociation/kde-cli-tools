@@ -14,7 +14,7 @@ Source0: https://invent.kde.org/plasma/kde-cli-tools/-/archive/%{gitbranch}/kde-
 Source0: http://download.kde.org/%{stable}/plasma/%{major}/kde-cli-tools-%{version}.tar.xz
 %endif
 Summary: KDE Plasma 6 CLI (Command Line Interface) Tools
-URL: http://kde.org/
+URL: https://kde.org/
 License: GPL
 Group: System/Libraries
 BuildRequires: cmake(Qt6)
