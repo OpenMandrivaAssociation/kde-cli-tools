@@ -6,8 +6,8 @@
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 
 Name: plasma6-kde-cli-tools
-Version: 6.3.3
-Release: %{?git:0.%{git}.}2
+Version: 6.3.4
+Release: %{?git:0.%{git}.}1
 %if 0%{?git:1}
 Source0: https://invent.kde.org/plasma/kde-cli-tools/-/archive/%{gitbranch}/kde-cli-tools-%{gitbranchd}.tar.bz2#/kde-cli-tools-%{git}.tar.bz2
 %else
