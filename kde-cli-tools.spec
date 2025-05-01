@@ -5,9 +5,9 @@
 %define gitbranch Plasma/6.0
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 
-Name: plasma6-kde-cli-tools
+Name: kde-cli-tools
 Version: 6.3.4
-Release: %{?git:0.%{git}.}2
+Release: %{?git:0.%{git}.}3
 %if 0%{?git:1}
 Source0: https://invent.kde.org/plasma/kde-cli-tools/-/archive/%{gitbranch}/kde-cli-tools-%{gitbranchd}.tar.bz2#/kde-cli-tools-%{git}.tar.bz2
 %else
@@ -44,25 +44,14 @@ BuildRequires: cmake(KF6Declarative)
 BuildRequires: cmake(KF6Parts)
 BuildRequires: %mklibname -d KF6IconWidgets
 BuildRequires: gettext
+BuildSystem: cmake
+BuildOption: -DBUILD_QCH:BOOL=ON
+BuildOption: -DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
+# Renamed 2025-05-02 after 6.0
+%rename plasma6-kde-cli-tools
 
 %description
 KDE Plasma 6 CLI (Command Line Interface) Tools.
-
-%prep
-%autosetup -p1 -n kde-cli-tools-%{?git:%{gitbranchd}}%{!?git:%{version}}
-%cmake \
-	-DBUILD_QCH:BOOL=ON \
-	-DBUILD_WITH_QT6:BOOL=ON \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
-	-G Ninja
-
-%build
-%ninja -C build
-
-%install
-%ninja_install -C build
-
-%find_lang %{name} --all-name --with-html --with-man
 
 %files -f %{name}.lang
 %{_bindir}/kbroadcastnotification
